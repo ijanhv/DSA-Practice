@@ -12,6 +12,8 @@ public class BinaryTrees {
         postOrder(root);
         System.out.println();
         System.out.println("Height : " + height(root));
+        System.out.println();
+        System.out.println("Size: " + size(root));
     }
 
     static Node createTree() {
@@ -61,11 +63,17 @@ public class BinaryTrees {
         return Math.max(height(root.left), height(root.right)) + 1;
     }
 
+    static int size(Node root) {
+        if(root == null) {
+            return 0;
+        }
+        return size(root.left) + size(root.right) + 1;
+    }
+
 }
 class Node {
     Node left, right;
     int data;
-
     public Node(int data) {
         this.data = data;
     }
