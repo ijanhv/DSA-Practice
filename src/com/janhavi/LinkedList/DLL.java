@@ -21,7 +21,48 @@ public class DLL {
         size ++;
     }
 
+    public void insertLast(int val) {
+        Node node = new Node(val);
+        if(head == null) {
+            head = node;
+            head.prev = null;
+            return;
+        }
+        Node last = head;
+        while(last.next != null) {
+            last = last.next;
+        }
+        node.next = null;
+        last.next = node;
+        node.prev = last;
+    }
 
+    public void insertAfterValue(int after, int val) {
+        Node p = find(after);
+        if(p == null) {
+            System.out.println("Node does not exist");
+            return;
+        }
+        Node node = new Node(val);
+        node.next = p.next;
+        p.next = node;
+        node.prev = p;
+        if(node.next != null) {
+            node.next.prev = node;
+        }
+
+    }
+
+    public Node find(int val) {
+        Node node = head;
+        while(node != null) {
+            if(node.value == val) {
+                return node;
+            }
+            node = node.next;
+        }
+        return null;
+    }
     public void display() {
         Node temp = head;
         Node last = null;
@@ -33,7 +74,7 @@ public class DLL {
         }
         System.out.println("END");
 
-        System.out.println("Print in Reverse");
+       System.out.println("Print in Reverse");
 
         while (last != null) {
             System.out.print(last.value + " <-> ");
@@ -42,7 +83,7 @@ public class DLL {
         System.out.print("START");
     }
 
-//
+
 //    public void displayRev() {
 //       Node temp = head;
 //       while(temp != null) {

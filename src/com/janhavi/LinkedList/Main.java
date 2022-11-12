@@ -29,11 +29,30 @@ public class Main {
 //        System.out.println("Deleting from index");
 //        System.out.println(list.delete(5));
 //        list.display();
+//
+//       <----- DLL ----->
+//        DLL list = new DLL();
+//        list.insertFirst(23);
+//        list.insertFirst(27);
+//        list.insertFirst(47);
+//
+//        list.insertLast(34);
+//        list.insertLast(54);
+//        list.display();
+//        System.out.println();
+//        list.insertAfterValue(34, 66);
+//        list.display();
 
-        DLL list = new DLL();
-        list.insertFirst(23);
-        list.insertFirst(27);
-        list.insertFirst(47);
+//        <-------CLL-------->
+
+        CLL list = new CLL();
+        list.insert(34);
+        list.insert(45);
+        list.insert(65);
+        list.insert(54);
+        list.insert(90);
+        list.display();
+        list.delete(65);
         list.display();
 
 
