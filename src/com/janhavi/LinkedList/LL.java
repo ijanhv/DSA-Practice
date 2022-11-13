@@ -20,6 +20,43 @@ public class LL {
         size ++;
     }
 
+    public boolean hasCyle(Node head) {
+        Node slow = head;
+        Node fast = head;
+
+        while(fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+
+            if(fast == slow) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public int lengthOfCycle(Node head) {
+        Node fast = head;
+        Node slow = head;
+
+        while(fast != null && slow != null) {
+            fast = fast.next;
+            slow = slow.next;
+
+            if(fast == slow) {
+                //calculate the length
+                Node temp = slow;
+                int length = 0;
+                do {
+                    temp = temp.next;
+                    length++;
+                } while(temp != slow);
+                return length;
+            }
+        }
+        return 0;
+    }
+
     public void insertLast(int val) {
         if(tail == null) {
             insertFirst(val);
@@ -30,6 +67,25 @@ public class LL {
         tail = node;
         size ++;
     }
+
+    //insert using recursion
+
+    public void insertRec(int val, int index) {
+        head = insertRec(val, index, head);
+    }
+
+    private Node insertRec(int val, int index, Node node) {
+        if(index == 0) {
+            Node temp = new Node(val, node);
+            size ++;
+            return temp;
+        }
+
+        node.next = insertRec(val, index-1, node.next);
+        return node;
+    }
+
+
 
     public void insertAtPosition(int index, int val) {
         if(index == 0) {
