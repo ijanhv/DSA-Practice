@@ -35,6 +35,51 @@ public class LL {
         return false;
     }
 
+    public void reverse(Node node) {
+        if(node == tail) {
+            head = tail;
+            return;
+        }
+
+        reverse(node.next);
+
+        tail.next = node;
+        tail = node;
+        tail.next = null;
+    }
+
+    public void reverseIterative() {
+        if(size < 2) {
+            return;
+        }
+
+        Node prev = null;
+        Node pres = head;
+        Node next = pres.next;
+
+        while(pres != null) {
+            pres.next = prev;
+            prev = pres;
+            pres = next;
+            if(next != null) {
+                next = next.next;
+            }
+        }
+        head = prev;
+    }
+
+    public int findMiddle() {
+        Node slow = head;
+        Node fast = head;
+
+        while(fast != null && fast.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+
+        return slow.value;
+    }
+
     public int lengthOfCycle(Node head) {
         Node fast = head;
         Node slow = head;
@@ -67,6 +112,34 @@ public class LL {
         tail = node;
         size ++;
     }
+
+    public boolean isHappy(int n) {
+        int slow = n;
+        int fast = n;
+
+        do {
+            slow = findSquare(slow);
+            fast = findSquare((findSquare(fast)));
+        } while(fast != slow);
+
+        if(slow == 1) {
+            return true;
+        }
+        return false;
+    }
+
+    private int findSquare(int number) {
+        int ans = 0;
+        while(number > 0) {
+            int rem = number % 10;
+            ans += rem * rem;
+            number = number / 10;
+        }
+
+        return ans;
+    }
+
+
 
     //insert using recursion
 

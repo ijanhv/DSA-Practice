@@ -12,8 +12,10 @@ public class Main {
         list.insertLast(45);
         list.insertFirst(62);
         list.insertFirst(10);
-        list.insertLast(98);
         list.insertLast(58);
+        list.insertLast(98);
+        list.insertLast(90);
+
         System.out.println("Displaying Linked List");
         list.display();
         list.insertAtPosition(3, 100);
@@ -21,6 +23,7 @@ public class Main {
         list.display();
         list.insertRec(88, 3);
         list.display();
+
 
 //        System.out.print("Deleting First node");
 //        list.deleteFirst();
@@ -57,6 +60,9 @@ public class Main {
 //        list.display();
 //        list.delete(65);
 //        list.display();
+//         System.out.print(list.isHappy(19));
+        System.out.print(list.findMiddle());
+
 
 
     }
