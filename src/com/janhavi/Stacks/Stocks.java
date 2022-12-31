@@ -8,7 +8,7 @@ public class Stocks {
         span[0] = 1;
         st.push(0);
 
-        for(int i = 0; i < stocks.length; i ++) {
+        for(int i = 1; i < stocks.length; i ++) {
             int currPrice = stocks[i];
             while(!st.isEmpty() && currPrice > stocks[st.peek()]) {
                 st.pop();
@@ -18,11 +18,8 @@ public class Stocks {
             } else {
                 int prevHigh = st.peek();
                 span[i] = i - prevHigh;
-                st.push(i);
             }
-
-
-
+            st.push(i);
         }
     }
 
@@ -33,7 +30,7 @@ public class Stocks {
         stockSpan(stocks, span);
 
         for(int i = 0; i < span.length; i ++) {
-            System.out.println(span[i]);
+            System.out.print(span[i] + ", ");
         }
     }
 }
