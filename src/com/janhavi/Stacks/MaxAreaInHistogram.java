@@ -41,7 +41,6 @@ public class MaxAreaInHistogram {
                 //nextGreater = st.peek()
                 nsl[i] = st.peek();
             }
-
             st.push(i);
         }
 

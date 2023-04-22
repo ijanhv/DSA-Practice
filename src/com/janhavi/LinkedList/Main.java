@@ -24,6 +24,9 @@ public class Main {
         list.insertRec(88, 3);
         list.display();
 
+//        list.reverse();
+
+
 
 //        System.out.print("Deleting First node");
 //        list.deleteFirst();

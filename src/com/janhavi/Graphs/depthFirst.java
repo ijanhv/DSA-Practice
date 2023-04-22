@@ -32,7 +32,6 @@ class depthFirst {
 
     void dfs(int s) {
         boolean visited[] = new boolean[V];
-
         dfsUtil(s, visited);
     }
 
