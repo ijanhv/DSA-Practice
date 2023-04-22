@@ -3,19 +3,19 @@ package com.janhavi.mathematics;
 import java.util.Arrays;
 
 public class LongestEvenLengthWord {
-    public static int findLongestEvenWord(String sentence) {
+    public static String findLongestEvenWord(String sentence) {
         String[] words = sentence.split(" ");
-        int longestEvenWordLength = 0;
+        String longestEvenWord = "";
         for (String word : words) {
-            if (word.length() % 2 == 0 && word.length() > longestEvenWordLength) {
-                longestEvenWordLength = word.length();
+            if (word.length() % 2 == 0 && word.length() > longestEvenWord.length()) {
+                longestEvenWord = word;
             }
         }
-        return longestEvenWordLength;
+        return longestEvenWord;
     }
 
     public static void main(String[] args) {
-        System.out.println(findLongestEvenWord("I love coding codiinnggg so much"));
+        System.out.println(findLongestEvenWord("Time to hahaha write great code"));
 
     }
 }
