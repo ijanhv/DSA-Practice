@@ -2,7 +2,7 @@ package com.janhavi.mathematics;
 
 public class IdealNumber {
     public static void main(String[] args) {
-        System.out.print(getIdealNums (200, 405));
+        System.out.print(getIdealNums (1, 1));
     }
 
     public static int getIdealNums(int low, int high) {
