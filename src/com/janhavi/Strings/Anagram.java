@@ -1,10 +1,12 @@
 package com.janhavi.Strings;
 
+import java.util.Arrays;
+
 public class Anagram {
 
     public static void main(String[] args) {
         String string1 = "listen";
-        String string2 = "silenq";
+        String string2 = "silent";
 
         if (checkAnagram(string1, string2)) {
             System.out.println("The strings are anagrams.");
@@ -31,6 +33,8 @@ public class Anagram {
             for (int i = 0; i < str1.length(); i ++) {
                 charFrequencies[str1.charAt(i) - 'a'] ++;
                 charFrequencies[str2.charAt(i) - 'a'] --;
+                System.out.println(Arrays.toString(charFrequencies));
+
             }
 
             // Check character frequencies for str2
