@@ -9,12 +9,13 @@ public class DuplicateParenthesis {
 
         for(int i = 0; i < str.length(); i ++) {
             char ch = str.charAt(i);
-
+            // if ending bracket found
             if(ch == ')') {
                 int count = 0;
                 while(st.peek() != '(') {
                     st.pop();
-                    count++;
+                    count ++;
+
                 }
 
                 if(count < 1) {
@@ -25,6 +26,7 @@ public class DuplicateParenthesis {
             } else {
                 st.push(ch);
             }
+
         }
 
         return false;
