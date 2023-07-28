@@ -1,5 +1,6 @@
 package com.janhavi.Stacks;
 
+import java.util.Arrays;
 import java.util.Stack;
 
 public class MaxAreaInHistogram {
@@ -53,6 +54,8 @@ public class MaxAreaInHistogram {
             maxArea = Math.max(currArea, maxArea);
         }
 
+        System.out.println(Arrays.toString(nsr));
+        System.out.println(Arrays.toString(nsl));
         return maxArea;
     }
 

@@ -7,8 +7,8 @@ import java.util.List;
 
 public class Intersection {
     public static void main(String[] args) {
-        int[] nums1 = {1, 2, 4, 5, 6};
-        int[] nums2 = {2, 3, 5, 7};
+        int[] nums1 = {1, 2, 4, 5, 5, 6};
+        int[] nums2 = {2, 3, 5, 5, 7};
         List<Integer> intersection = IntersectionOfArrays(nums1, nums2);
         System.out.println("Intersection: " + intersection);
 

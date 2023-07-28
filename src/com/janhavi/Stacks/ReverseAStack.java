@@ -21,7 +21,6 @@ public class ReverseAStack {
         reverseStackRecursion(stack);
         pushBottom(stack, top);
 
-
     }
 
     public static void printStack(Stack<Integer> stack) {
